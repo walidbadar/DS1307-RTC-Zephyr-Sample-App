@@ -17,8 +17,8 @@ static int32_t set_date_time(const struct device *dev)
 		.tm_year = 2024 - 1900,
 		.tm_mon	 = 7 - 1,
 		.tm_mday = 28,
-		.tm_hour = 2,
-		.tm_min	 = 49,
+		.tm_hour = 3,
+		.tm_min	 = 51,
 		.tm_sec	 = 0
 	};
 	int32_t ret = 0;
@@ -58,10 +58,6 @@ int main(void)
 	/* Get the device structure for the Tiny RTC */
 	const struct device *const dev =
 		DEVICE_DT_GET_ONE(maxim_ds1307);
-
-	int32_t ret = 0;
-	const struct device *const dev = DEVICE_DT_GET_ONE(maxim_ds1307);
-	printk("Program Started\n");
 
 	/* Check if the Tiny RTC device is available */
 	if (dev == NULL) {
