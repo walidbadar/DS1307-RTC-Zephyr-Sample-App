@@ -1,8 +1,0 @@
-&i2c0 {
-    status = "okay";
-
-    tinyrtc: ds1307@68 {
-        compatible = "maxim,ds1307";
-        reg = <0x68>;
-    };
-};
