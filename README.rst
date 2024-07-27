@@ -1,32 +1,26 @@
-.. _lsm303dlhc:
-
-LSM303DLHC: Magnetometer and Accelerometer data Monitor
+DS1307: Tiny RTC Module
 #######################################################
 
 Overview
 ********
-This sample application periodically reads magnetometer and accelerometer data
-from the LSM303DLHC eCompass module's sensors, and displays the sensor data
-on the console.
+This sample application periodically reads date and time data from the DS1307 RTC module's sensor, and displays the date and time on the console.
 
 Requirements
 ************
 
-This sample uses the LSM303DLHC, ST MEMS system-in-package featuring a
-3D digital linear acceleration sensor and a 3D digital magnetic sensor,
-controlled using the I2C interface.
+The DS1307 is a real-time clock module that keeps track of the current date and time using a 32.768 kHz crystal oscillator. It communicates via I2C and includes a battery backup to maintain time even when the main power is off.
 
 References
 **********
 
-For more information about the LSM303DLHC eCompass module, see
-https://www.st.com/en/mems-and-sensors/lsm303dlhc.html
+For more information about the DS1307 RTC module, see 
+https://www.analog.com/en/products/ds1307.html
 
 Building and Running
 ********************
 
-This project outputs sensor data to the console. It requires a LSM303DLHC
-system-in-package, which is present on the stm32f3_disco board
+This project outputs rtc date and time to the console. It requires a DS1307
+system-in-package.
 
 .. zephyr-app-commands::
    :zephyr-app: samples/rtc/ds1307
@@ -36,11 +30,17 @@ system-in-package, which is present on the stm32f3_disco board
 
 Sample Output
 =============
-   Current RTC time: 2024-07-28 02:46:00
-   Current RTC time: 2024-07-28 02:46:01
-   Current RTC time: 2024-07-28 02:46:02
-   Current RTC time: 2024-07-28 02:46:03
-   Current RTC time: 2024-07-28 02:46:04
+ Current RTC time: 2024-07-28 02:46:00
+
+ Current RTC time: 2024-07-28 02:46:01
+
+ Current RTC time: 2024-07-28 02:46:02
+
+ Current RTC time: 2024-07-28 02:46:03
+
+ Current RTC time: 2024-07-28 02:46:04
+
+ Current RTC time: 2024-07-28 02:46:05
 
 .. code-block:: console
 
