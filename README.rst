@@ -3,7 +3,7 @@ DS1307: Tiny RTC Module
 
 Overview
 ********
-This sample application periodically reads date and time data from the DS1307 RTC module's sensor, and displays the date and time on the console.
+This sample application periodically reads date and time data from the DS1307 RTC module, and displays the date and time on the console.
 
 Requirements
 ************
