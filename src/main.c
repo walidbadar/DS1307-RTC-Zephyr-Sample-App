@@ -10,9 +10,9 @@
 #include <zephyr/sys/util.h>
 #include <stdio.h>
 
-
 static int32_t set_date_time(const struct device *dev)
 {
+	int32_t ret = 0;
 	struct rtc_time tm = {
 		.tm_year = 2024 - 1900,
 		.tm_mon	 = 7 - 1,
@@ -21,23 +21,21 @@ static int32_t set_date_time(const struct device *dev)
 		.tm_min	 = 51,
 		.tm_sec	 = 0
 	};
-	int32_t ret = 0;
 
 	ret = rtc_set_time(dev, &tm);
 	if (ret < 0) {
 		printk("Cannot write date time: %d\n", ret);
 		return ret;
 	}
-
 	return ret;
 }
 
 
 static int32_t get_date_time(const struct device *dev)
 {
-	struct rtc_time tm;
 	int32_t ret = 0;
-
+	struct rtc_time tm;
+	
 	ret = rtc_get_time(dev, &tm);
 	if (ret < 0) {
 		printk("Cannot read date time: %d\n", ret);
@@ -81,9 +79,7 @@ int main(void)
 			printk("Failed to read tiny rtc\n");
 			return 0;
 		}
-
 		k_sleep(K_MSEC(1000));  // Sleep for 1 second
 	}
-
 	return 0;
 }
