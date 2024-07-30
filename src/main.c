@@ -57,13 +57,13 @@ int main(void)
 	const struct device *const dev =
 		DEVICE_DT_GET_ONE(maxim_ds1307);
 
-	/* Check if the Tiny RTC device is available */
+	/* Check if the Tiny RTC is available */
 	if (dev == NULL) {
 		printk("Error: no device found\n");
 		return 0;
 	}
 
-	/* Check if the Tiny RTC device is ready */
+	/* Check if the Tiny RTC is ready */
 	if (!device_is_ready(dev)) {
 		printk("Device is not ready\n");
 		return 0;
