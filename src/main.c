@@ -69,7 +69,7 @@ int main(void)
 		return 0;
 	}
 
-	/* Set the time Once. */
+	/* Set the date and time once. */
 	// set_date_time(dev);
 
 	/* Continuously read the current time from the Tiny RTC */
