@@ -56,8 +56,7 @@ int main(void)
 	int32_t ret = 0;
 
 	/* Get the device structure for the RTC */
-	const struct device *const dev =
-		DEVICE_DT_GET(RTC_NODE);
+	const struct device *const dev = DEVICE_DT_GET(RTC_NODE);
 
 	/* Check if the RTC is available */
 	if (dev == NULL) {
