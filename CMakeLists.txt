@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2024, Muhammad Waleed Badar
+# Copyright (c) 2024, Muhammad Waleed Badar (walid.badar@gmail.com)
 #
 # SPDX-License-Identifier: Apache-2.0
 #
