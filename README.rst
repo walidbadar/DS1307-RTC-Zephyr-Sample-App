@@ -28,12 +28,6 @@ system-in-package.
 Sample Output
 =============
  Current RTC time: 2024-07-28 02:46:00
- Current RTC time: 2024-07-28 02:46:01
- Current RTC time: 2024-07-28 02:46:02
- Current RTC time: 2024-07-28 02:46:03
- Current RTC time: 2024-07-28 02:46:04
- Current RTC time: 2024-07-28 02:46:05
-
 .. code-block:: console
 
    <repeats endlessly every 1 seconds>
