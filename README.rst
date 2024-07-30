@@ -23,7 +23,7 @@ This project outputs rtc date and time to the console. It requires a DS1307
 system-in-package.
 
 .. zephyr-app-commands::
-   :zephyr-app: samples/rtc/ds1307
+   :zephyr-app: samples/drivers/rtc/ds1307
    :board: esp32_devkitc_wroom
    :goals: build
    :compact:
