@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Muhammad Waleed Badar (walid.badar@gmail.com)
+ * Copyright (c) 2024, Muhammad Waleed Badar <walid.badar@gmail.com>
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -9,6 +9,8 @@
 #include <zephyr/drivers/rtc.h>
 #include <zephyr/sys/util.h>
 #include <stdio.h>
+
+#define RTC_NODE DT_NODELABEL(rtc0)
 
 static int32_t set_date_time(const struct device *dev)
 {
@@ -53,17 +55,17 @@ int main(void)
 {
 	int32_t ret = 0;
 
-	/* Get the device structure for the Tiny RTC */
+	/* Get the device structure for the RTC */
 	const struct device *const dev =
-		DEVICE_DT_GET_ONE(maxim_ds1307);
+		DEVICE_DT_GET(RTC_NODE);
 
-	/* Check if the Tiny RTC is available */
+	/* Check if the RTC is available */
 	if (dev == NULL) {
 		printk("Error: no device found\n");
 		return 0;
 	}
 
-	/* Check if the Tiny RTC is ready */
+	/* Check if the RTC is ready */
 	if (!device_is_ready(dev)) {
 		printk("Device is not ready\n");
 		return 0;
@@ -72,11 +74,11 @@ int main(void)
 	/* Set the date and time once. */
 	// set_date_time(dev);
 
-	/* Continuously read the current time from the Tiny RTC */
+	/* Continuously read the current time from the RTC */
 	while (1) {
 		ret = get_date_time(dev);
 		if (ret < 0) {
-			printk("Failed to read tiny rtc\n");
+			printk("Failed to read from rtc\n");
 			return 0;
 		}
 		k_sleep(K_MSEC(1000));  // Sleep for 1 second
