@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, Muhammad Waleed Badar <walid.badar@gmail.com>
+ * Copyright (c) 2024, Muhammad Waleed Badar
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -12,9 +12,9 @@
 
 #define RTC_NODE DT_NODELABEL(rtc0)
 
-static int32_t set_date_time(const struct device *dev)
+static int set_date_time(const struct device *dev)
 {
-	int32_t ret = 0;
+	int ret = 0;
 	struct rtc_time tm = {.tm_year = 2024 - 1900,
 			      .tm_mon = 7 - 1,
 			      .tm_mday = 28,
@@ -30,9 +30,9 @@ static int32_t set_date_time(const struct device *dev)
 	return ret;
 }
 
-static int32_t get_date_time(const struct device *dev)
+static int get_date_time(const struct device *dev)
 {
-	int32_t ret = 0;
+	int ret = 0;
 	struct rtc_time tm;
 
 	ret = rtc_get_time(dev, &tm);
@@ -49,7 +49,7 @@ static int32_t get_date_time(const struct device *dev)
 
 int main(void)
 {
-	int32_t ret = 0;
+	int ret = 0;
 
 	/* Get the device structure for the RTC */
 	const struct device *const dev = DEVICE_DT_GET(RTC_NODE);
@@ -60,11 +60,7 @@ int main(void)
 		return 0;
 	}
 
-	/* Check if the RTC is ready */
-	if (!device_is_ready(dev)) {
-		printk("Device is not ready\n");
-		return 0;
-	}
+	set_date_time(dev);
 
 	/* Continuously read the current time from the RTC */
 	while (1) {
