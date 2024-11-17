@@ -8,24 +8,23 @@ Overview
 ********
 
 This sample shows how to use the :ref:`rtc driver API <rtc_api>`
-to read date and time data from the RTC and display on the console.
+to read date and time from the RTC and display on the console
+and can be built and executed on boards supporting RTC.
 
 Building and Running
 ********************
 
-The sample can be built and executed on boards supporting RTC. See the
-overlay file :zephyr_file:`samples/drivers/rtc/boards/stm32f3_disco.overlay`
-for configuration.
+This application can be built on :ref:`stm32f3_disco <stm32f3_disco>` as follows:
 
 .. zephyr-app-commands::
    :zephyr-app: samples/drivers/rtc
    :board: stm32f3_disco
-   :goals: build flash
+   :goals: build
    :compact:
 
 Sample Output
 =============
- 
+
 .. code-block:: console
 
    RTC date and time: 2024-11-17 04:21:47
@@ -33,3 +32,4 @@ Sample Output
    RTC date and time: 2024-11-17 04:21:49
 
    <repeats endlessly>
+   
